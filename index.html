@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>P-N Junction Diode Visualization</title>
+  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>P-N Junction Diode Visualization</h1>
+  <h2>By <a href="http://namanyayg.com/" rel="nofollow">Namanyay Goel</a> &middot; <a href="http://github.com/namanyayg">Github</a></h2>
+
+  <main>
+    <div class="circuit">
+      <div class="diode-cont">
+        <div class="diode">
+          <div class="p"><span>P-type</span></div>
+          <div class="n"><span>N-type</span></div>
+          <div class="depletion"></div>
+          <div class="depletion-text">
+            <div class="depletion-arrow"></div>
+            <span>Depletion Region&nbsp;</span>
+          </div>
+        </div>
+      </div>
+      <div class="wires"></div>
+      <div class="battery"></div>
+      
+    </div>
+    <div class="voltage">
+      <label>
+        <span>Voltage: </span>
+        <input type="number" value="0" step="0.1">V
+      </label>
+    </div>
+    <div class="current">
+      Current: <span class="flow">Does not flow.</span>
+    </div>
+    <p class="explanation">
+      <strong>Usage:</strong> Positive for forward bias, negative for reverse bias. It is assumed that the forward threshold voltage (knee voltage) for the semiconductor is 0.7V and the reverse breakdown voltage is 50V.
+    </p>
+    <p><strong>Prerequisites:</strong> A basic understanding of the P-N Junction Diode and how its depletion region behaves.</p>
+    <p class="theory">
+      <strong>Theory:</strong> <span>The depletion region acts as a capacitor. As long as there is some width of the depletion region, current cannot flow.<br><br>
+
+      Applying a higher potential to <em>P-type</em> and lower to <em>N-type</em> repels the majority carriers of <em>P-type</em> (holes) and <em>N-type</em> (electrons) towards the depletion region and the region shrinks. Due to the design of the semiconductor, the region shrinks to an effective width of 0 when it the potential reaches 1.8V in the forward direction.<br><br>
+
+      Conversely, applying a lower potential to <em>P-type</em> and higher to <em>N-type</em> attracts the majority carriers towards the end, away from the depletion region. The depletion region increases in width and conduction is not possible. However, when a very high voltage (greater than 50V) is applied, the depletion region expands to the whole of the diode. Once this happens, conduction starts through the carriers present in the depletion region.
+      </span>
+    </p>
+  </main>
+
+  <footer class="colophon">
+    With ❤ from India. <a href="http://projects.namanyayg.com/gyan">More Projects.</a>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-41471024-10', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
