@@ -233,7 +233,7 @@ input {
   width: 25em;
 }
 
-p {
+p, ul {
   width: 44em;
   font-size: 1.125em;
   margin: 2em auto;
@@ -250,6 +250,19 @@ p strong, p em {
 p strong {
   text-shadow: 0 1px white, 0 2px white, 0 2px 1px white;
   background: linear-gradient(#fff 85%, 85%, #999, 87%, #fff 87% )
+}
+
+ul {
+  padding: 0 0 0 1.5em;
+  margin: 0 auto;
+}
+
+li {
+  margin: 0 0 .5em;
+}
+
+p + ul {
+  margin-top: -1em;
 }
 
 /* CIRCUIT */

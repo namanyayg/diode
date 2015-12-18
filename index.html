@@ -29,7 +29,7 @@
     </div>
     <div class="voltage">
       <label>
-        <span>Voltage: </span>
+        <span>Set Voltage: </span>
         <input type="number" value="0" step="0.1">V
       </label>
     </div>
@@ -37,7 +37,7 @@
       Current: <span class="flow">Does not flow.</span>
     </div>
     <p class="explanation">
-      <strong>Usage:</strong> Positive for forward bias, negative for reverse bias. It is assumed that the forward threshold voltage (knee voltage) for the semiconductor is 0.7V and the reverse breakdown voltage is 50V.
+      <strong>Usage:</strong> Positive for forward bias, negative for reverse bias. It is assumed that the forward threshold voltage (knee voltage) for the semiconductor is <strong>0.7V</strong> and the reverse breakdown voltage is <strong>10V</strong>.
     </p>
     <p><strong>Prerequisites:</strong> A basic understanding of the P-N Junction Diode and how its depletion region behaves.</p>
     <p class="theory">
@@ -47,6 +47,15 @@
 
       Conversely, applying a lower potential to <em>P-type</em> and higher to <em>N-type</em> attracts the majority carriers towards the end, away from the depletion region. The depletion region increases in width and conduction is not possible. However, when a very high voltage (greater than 50V) is applied, the depletion region expands to the whole of the diode. Once this happens, conduction starts through the carriers present in the depletion region.
       </span>
+    </p>
+    <p class="approximations">
+      <strong>Approximations:</strong>
+      <ul>
+        <li>Width of the depletion region increases with the square of the voltage applied. For the sake of simplicity, it increases linearly here.</li>
+        <li>Reverse breakdown voltage varies on the order of 50 - 70V for common diodes. For easier visualization, a 10V breakdown voltage is used in here.</li>
+      </ul>
+
+
     </p>
   </main>
 

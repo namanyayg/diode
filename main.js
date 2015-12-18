@@ -1,6 +1,10 @@
 $(function() {
-  var depWidth = parseFloat($('.depletion').width());
-  var maxWidth = parseFloat($('.diode').width());
+  var kneeVoltage = 0.7
+    , breakdownVoltage = 10
+
+  var maxWidth = parseFloat($('.diode').width())
+    , unitWidth = maxWidth/(breakdownVoltage + kneeVoltage)
+    , depWidth = unitWidth * kneeVoltage;
 
   function changeWidth (width) {
     $('.depletion, .depletion-arrow').css({
@@ -17,19 +21,19 @@ $(function() {
   }
 
   function depletionWidth (voltage) {
-    if ( voltage >= 0.7 ) {
+    if ( voltage >= kneeVoltage ) {
       changeWidth(0);
       currentFlows(true);
     }
     else if ( voltage >= 0 ) {
-      changeWidth( (0.7 - voltage)/0.7 * depWidth )
+      changeWidth( (kneeVoltage - voltage)/kneeVoltage * depWidth )
       currentFlows(false);
     }
-    else if ( voltage > -50 ) {
-      changeWidth( (voltage/-50 * (maxWidth - depWidth)) + depWidth )
+    else if ( voltage > -breakdownVoltage ) {
+      changeWidth( (voltage/-breakdownVoltage * (maxWidth - depWidth)) + depWidth )
       currentFlows(false);
     }
-    else { // voltage <= 50
+    else { // voltage <= breakdownVoltage
       changeWidth( maxWidth )
       currentFlows(true);
     }
@@ -50,4 +54,6 @@ $(function() {
       $('.battery').addClass('battery--reverse');
     }
   });
+
+  changeWidth(depWidth)
 });
